@@ -1,7 +1,6 @@
-<template>
-  <section class="container">
-    <h1>scss</h1>
-  </section>
+<template lang="pug">
+  section.container
+    h1 scss
 </template>
 
 <script>
@@ -14,13 +13,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
-$padding: 15px;
-.container {
-  h1 {
-    padding: $padding;
-    border: 1px solid black;
-  }
-}
+<style lang="stylus">
+padding = 16px;
+.container
+  h1
+    padding: padding
+    border: 1px solid black
 </style>
 

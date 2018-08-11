@@ -1,7 +1,7 @@
 {
   "name": "webclient-torchiodev.com",
   "version": "1.0.0",
-  "description": "personal isomorphic webpage",
+  "description": "a personal website",
   "author": "pedrotorchio <pedrotorchio@gmail.com>",
   "private": true,
   "scripts": {
@@ -13,18 +13,15 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "jsapi-torchiodev.com": "^1.0.0",
-    "nuxt": "^1.0.0"
+    "jsapi-torchiodev.com": "^2.0.0",
+    "nuxt": "^1.0.0",
+    "vue-responsive-img": "^1.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "eslint-plugin-vue": "^4.0.0"
   }
 }

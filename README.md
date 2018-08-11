@@ -1,6 +1,6 @@
 # webclient-torchiodev.com
 
-> personal isomorphic webpage
+> a personal website
 
 ## Build Setup
 

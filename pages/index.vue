@@ -13,12 +13,11 @@
   width: 200px;
   height: 100%;
   height: 100vh;
-  border: 1px solid black;
-div
-  border: 1px solid black;
-
-  width: 100%;
-  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 
 </style>
 

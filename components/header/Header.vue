@@ -19,7 +19,16 @@
     width: 100%;
     height: auto;
   }
-
+  #main-header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  nav li
+    text-align: right;
+    list-style: none;
+  
 </style>
 
 <script>

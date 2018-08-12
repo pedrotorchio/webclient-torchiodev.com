@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'FuturistBold';
+  src: url('Futurist Fixed-width Bold.eot');
+  src: url('Futurist Fixed-width Bold.woff2') format('woff2'),
+       url('Futurist Fixed-width Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: bold;
+  font-style: bold;
+}
+
+/* @font-face {
+  font-family: 'FuturistBold';
+  src: url('FuturistFixedWidthBold.woff') format('woff'),
+       url('FuturistFixedWidthBold.ttf') format('truetype'),
+       url('FuturistFixedWidthBold.svg#FuturistFixedWidthBold') format('svg');
+  font-weight: bold;
+  font-style: bold;
+} */
+

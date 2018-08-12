@@ -20,7 +20,7 @@
     height: auto;
   }
   #main-header {
-    padding: 20px 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

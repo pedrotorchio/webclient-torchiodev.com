@@ -1,7 +1,9 @@
 <template lang="pug">
   aside#main-header
 
-    image-element
+    image-element(
+      :image="logo"
+    )
 
     nav
       ul

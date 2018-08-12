@@ -20,15 +20,26 @@
     height: auto;
   }
   #main-header {
-    padding: 10px;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  nav li
-    text-align: right;
-    list-style: none;
-  
+  nav 
+    margin-bottom: 8em;
+    ul
+      line-height: 64px;
+      li
+        font-weight: 100;
+        text-align: right;
+        list-style: none;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: .3em;
+        &.loaded
+          font-weight: bold;
+  h4
+    text-align: center;
 </style>
 
 <script>

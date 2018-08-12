@@ -16,4 +16,5 @@ const plugin = {
 
 Vue.use(plugin);
 
+// making it accessible at build time
 export default ({ app }) => {app.$api = api};

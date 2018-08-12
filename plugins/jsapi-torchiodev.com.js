@@ -1,8 +1,19 @@
 import Vue from 'vue';
-import { VuePlugin } from 'jsapi-torchiodev.com';
 import { apiUrl, clientToken } from '../.sensitive.json';
 
-Vue.use(VuePlugin, {
-  baseUrl: apiUrl,
-  authentication: clientToken 
-});
+import { DirectusFetcher } from 'jsapi-torchiodev.com';
+import { Api } from 'jsapi-torchiodev.com';
+
+let fetcher = new DirectusFetcher(apiUrl);
+    fetcher.setAuthorizationHeader(clientToken);
+let api = new Api(fetcher);
+
+const plugin = {
+  install(Vue) {
+    Vue.prototype.$api = api;
+  }
+}
+
+Vue.use(plugin);
+
+export default ({ app }) => {app.$api = api};

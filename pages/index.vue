@@ -1,14 +1,12 @@
 <template lang="pug">
   main
-    page-header(
+    page-header#main-header(
       :logo="logo"
       :email="email"
     )
 </template>
 
 <style lang="stylus">
-@import '~assets/styles/global';
-  
 #main-header
   width: 200px;
   height: 100vh;

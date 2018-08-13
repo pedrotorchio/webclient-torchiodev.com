@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'FuturistBold';
-  src: url('Futurist Fixed-width Bold.eot');
-  src: url('Futurist Fixed-width Bold.woff2') format('woff2'),
-       url('Futurist Fixed-width Bold.eot?#iefix') format('embedded-opentype');
+  src: url('~/assets/fonts/futurist-bold/Futurist Fixed-width Bold.eot');
+  src: url('~/assets/fonts/futurist-bold/Futurist Fixed-width Bold.woff2') format('woff2'),
+       url('~/assets/fonts/futurist-bold/Futurist Fixed-width Bold.eot?#iefix') format('embedded-opentype');
   font-weight: bold;
   font-style: bold;
 }

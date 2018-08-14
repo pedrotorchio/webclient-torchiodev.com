@@ -62,4 +62,5 @@ export default {
             font-weight: bold;
     h4
       text-align: center;
+      font-weight: 100;
 </style>

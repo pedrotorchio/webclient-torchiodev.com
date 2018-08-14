@@ -1,5 +1,10 @@
 <template lang="pug">
   main
+    div.hamburguer(
+      :class=`{
+        open: showHeader
+      }`
+    )
     page-header#main-header(
       :class=`{
         open: showHeader
@@ -13,19 +18,53 @@
 @import '~assets/styles/mixins.styl';
 
 #main-header
-  width: 200px;
+  z-index: 3;
+  width: wd = 200px;
   height: 100vh;
-  position: fixed;
   top: 0;
   bottom: 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  transition: left .5s cubic-bezier(0,.08,0,1.01);
-  left: -100%;
+  left: -(wd);
   &.open
     left: 0;
   
   +md()
     left: 0;
+
+#main-header, .hamburguer
+  transition: left .5s cubic-bezier(0,.08,0,1.01);
+  position: fixed;
+
+
+hamburguer-strip(space)
+  content: '';
+  height: (space/3);
+  border-radius: 10px;
+  width: space*3;
+  position: absolute;
+  background-color: grey;
+
+.hamburguer
+  z-index: 2;
+  space = 12px;
+  hamburguer-strip(space);
+
+  top: space*2;
+  left: space*2;
+  
+  
+  &:before, &:after
+    hamburguer-strip(space);
+  &:before
+    top: space;
+  &:after
+    top: space * 2;
+  &.open
+    left: -5*space;
+
+
+  +md()
+    display: none;
 </style>
 
 

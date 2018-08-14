@@ -1,9 +1,8 @@
 module.exports = {
   css: [
     "reset-css",
-    'media-query-mixins/_mixins.styl',
-    '@/assets/fonts/futurist-bold/font.css',
-    '@/assets/styles/global.styl'
+    "@/assets/fonts/futurist-bold/font.css",
+    "@/assets/styles/global.styl"
   ],
   /*
   ** Headers of the page

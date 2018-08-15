@@ -19,15 +19,16 @@ delay(delayIt = true, overrider = false)
   delay(false);
   
   &.open
-    delay(true, true);
     left: 0;
-  
+    delay(true, true);
+
   +md()
     left: 0;
 
 #main-header, #hamburguer
   transition: left .5s cubic-bezier(0,.08,0,1.01);
   position: fixed;
+  
 
 
 
@@ -42,9 +43,8 @@ hamburguer-strip(space)
 #hamburguer
   space = 12px;
   duration = .5s;
-  
-  delay(true);
   hamburguer-strip(space);
+  delay(true);
 
   position: fixed;
   
@@ -54,8 +54,6 @@ hamburguer-strip(space)
 
   transition-property: opacity, top, left, width, height, background-color, border-radius;
   transition-duration: duration;
-  transition-delay: 0s;
-
   
   &.open 
     delay(false, true);
@@ -68,10 +66,18 @@ hamburguer-strip(space)
     border-radius: 0;
 
     &:before, &:after
-      display: none;
+      delay(false, true);
+      width: 0;
+      height: 0;
+      opacity: 0;
+      background-color: black;
 
   &:before, &:after
     hamburguer-strip(space);
+    delay(true);
+    transition-property: opacity, width, height, background-color;
+    transition-duration: duration;
+
   &:before
     top: space;
   &:after

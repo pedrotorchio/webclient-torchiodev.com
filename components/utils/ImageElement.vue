@@ -15,6 +15,9 @@ export default {
   },
   computed: {
     sources() {
+      if (!this.image)
+        return [];
+        
       return this.image.srcset.map( src => {
         const { url, size:[label, size] } = src;
 

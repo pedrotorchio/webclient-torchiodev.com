@@ -47,11 +47,11 @@ export default {
 <style lang="stylus" scoped>
 
   #hamburguer
-    z-index: 1;
+    z-index: 2;
   #main-header
     z-index: 3;
   #main-body
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
 </style>

@@ -37,6 +37,8 @@ export default {
 </template>
 
 <style lang="stylus" scoped> 
+@import '~assets/styles/mixins.styl';
+
   aside
     padding: 20px;
     display: flex;
@@ -48,8 +50,16 @@ export default {
       height: auto;
   
     nav 
-      margin-bottom: 8em;
+      height: 50%;
+      +xl()
+        height: 256px;
+
+      max-height: 512px;
       ul
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         line-height: 64px;
         li
           font-weight: 100;

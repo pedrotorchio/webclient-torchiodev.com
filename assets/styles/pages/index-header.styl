@@ -41,16 +41,34 @@ hamburguer-strip(space)
 
 #hamburguer
   space = 12px;
+  duration = .5s;
   
   delay(true);
   hamburguer-strip(space);
 
+  position: fixed;
+  
   top: space*2;
   left: space*2;
+  opacity: 1;
+
+  transition-property: opacity, top, left, width, height, background-color, border-radius;
+  transition-duration: duration;
+  transition-delay: 0s;
+
   
   &.open 
     delay(false, true);
-    left: -(5*space);
+    opacity: .5;
+    top: 0;
+    left: 0;
+    height: 100vh;    
+    width: 100vw;
+    background-color: black;
+    border-radius: 0;
+
+    &:before, &:after
+      display: none;
 
   &:before, &:after
     hamburguer-strip(space);
@@ -58,9 +76,6 @@ hamburguer-strip(space)
     top: space;
   &:after
     top: space * 2;
-  &.open
-    left: -5*space;
-
 
   +md()
     display: none;

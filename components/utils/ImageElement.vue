@@ -17,21 +17,14 @@ export default {
     sources() {
       if (!this.image)
         return [];
-        
-      return this.image.srcset.map( src => {
-        const { url, size:[label, size] } = src;
-
-        return {
-          url,
-          [label]: size
-        }
-      });
+      
+      return this.image.srcset.map( ({ url, size:[label, size] }) => ({url , [label]: size}) );
     }
   }
 }
 </script>
 <template lang="pug">
-  responsive-image.img(
+  responsive-image.img( v-if='image'
     :sources='sources'
   )
 </template>

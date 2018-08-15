@@ -10,7 +10,7 @@ delay(delayIt = true, overrider = false)
   transition-delay: value;
   transition-timing-function: ease-in-out;
 
-#main-header
+.collapsable-header
   background-color: white;
   width: wd = 200px;
   height: 100vh;
@@ -27,12 +27,9 @@ delay(delayIt = true, overrider = false)
   +lg()
     left: 0;
 
-#main-header, #hamburguer
+.collapsable-header, .collapsable-header-hamburguer
   transition: left .5s cubic-bezier(0,.08,0,1.01);
   position: fixed;
-  
-
-
 
 hamburguer-strip(space)
   content: '';
@@ -42,7 +39,7 @@ hamburguer-strip(space)
   position: absolute;
   background-color: grey;
 
-#hamburguer
+.collapsable-header-hamburguer
   space = 12px;
   duration = .2s;
   color = rgba(0,0,0,.2);

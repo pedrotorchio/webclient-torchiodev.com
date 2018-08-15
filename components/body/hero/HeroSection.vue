@@ -5,7 +5,7 @@
 <style lang="stylus" scoped>
 
 section
-  background-color: black;
+  background-color: #7f5a98;
   height: 600px;
 
 </style>

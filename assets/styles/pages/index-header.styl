@@ -3,13 +3,15 @@
 delay(delayIt = true, overrider = false)
   value = 0s;
   if delayIt 
-    value = .2s;
+    value = .1s;
   if overrider
     value = value !important;
 
   transition-delay: value;
+  transition-timing-function: ease-in-out;
 
 #main-header
+  background-color: white;
   width: wd = 200px;
   height: 100vh;
   top: 0;
@@ -42,7 +44,9 @@ hamburguer-strip(space)
 
 #hamburguer
   space = 12px;
-  duration = .5s;
+  duration = .2s;
+  color = rgba(0,0,0,.2);
+
   hamburguer-strip(space);
   delay(true);
 
@@ -52,31 +56,34 @@ hamburguer-strip(space)
   left: space*2;
   opacity: 1;
 
-  transition-property: opacity, top, left, width, height, background-color, border-radius;
+  transition-property: opacity, top, left, width, height, background-color, border-radius, box-shadow;
   transition-duration: duration;
-  
-  &.open 
-    delay(false, true);
-    opacity: .5;
-    top: 0;
-    left: 0;
-    height: 100vh;    
-    width: 100vw;
-    background-color: black;
-    border-radius: 0;
-
-    &:before, &:after
-      delay(false, true);
-      width: 0;
-      height: 0;
-      opacity: 0;
-      background-color: black;
+  box-shadow: 0 0 transparent;
 
   &:before, &:after
     hamburguer-strip(space);
     delay(true);
     transition-property: opacity, width, height, background-color;
     transition-duration: duration;
+
+
+  &.open 
+    delay(false, true);
+    opacity: .3;
+    top: 0;
+    left: 0;
+    height: 100vh;    
+    width: 100vw;
+    background-color: color;
+    border-radius: 0;
+    box-shadow: inset 0 0 500px 100px color;
+
+    &:before, &:after
+      delay(false, true);
+      width: 0;
+      height: 0;
+      opacity: 0;
+      background-color: color;
 
   &:before
     top: space;

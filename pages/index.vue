@@ -1,65 +1,57 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        webclient-torchiodev.com
-      </h1>
-      <h2 class="subtitle">
-        a personal website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import PageHeader from '~/components/header/Header';
+import PageBody from '~/components/body/Body';
 
 export default {
   components: {
-    AppLogo
+    PageHeader,
+    PageBody
+  },
+  data: () => ({
+    showHeader: false
+  }),
+  async asyncData({app}) {    
+    const info = await app.$api.getAppInfo();
+
+    return {
+      email: info.contact_email,
+      logo: info.logo
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<template lang="pug">
+  main
+    div#hamburguer.collapsable-sidebar-hamburguer( @click='showHeader = !showHeader'
+      :class=`{
+        open: showHeader
+      }`
+    )
+    page-header#main-header.collapsable-sidebar(
+      :class=`{
+        open: showHeader
+      }`
+      :logo="logo"
+      :email="email"
+    )
+    page-body#main-body( @click='showHeader = false'
+      :class=`{
+        hidden: showHeader
+      }`
+    )
+</template>
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+<style lang="stylus" scoped src="~/assets/styles/pages/index-header.styl"></style>
+<style lang="stylus" scoped src="~/assets/styles/pages/index-body.styl"></style>
+<style lang="stylus" scoped>
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  #hamburguer
+    z-index: 1;
+  #main-header
+    z-index: 3;
+  #main-body
+    position: relative;
+    z-index: 2;
 
-.links {
-  padding-top: 15px;
-}
 </style>
-

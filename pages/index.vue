@@ -23,12 +23,12 @@ export default {
 
 <template lang="pug">
   main
-    div#hamburguer( @click='showHeader = !showHeader'
+    div#hamburguer.collapsable-sidebar-hamburguer( @click='showHeader = !showHeader'
       :class=`{
         open: showHeader
       }`
     )
-    page-header#main-header(
+    page-header#main-header.collapsable-sidebar(
       :class=`{
         open: showHeader
       }`

@@ -9,7 +9,7 @@ export default {
   },
   props: {
     image: {
-      type: Image,
+      // type: Image,
       required: true
     }
   },

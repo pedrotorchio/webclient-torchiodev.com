@@ -19,7 +19,7 @@
     "save-dev": "^2.0.0",
     "srcset": "^1.0.0",
     "url-join": "^4.0.0",
-    "vue-responsive-img": "^3.0.2",
+    "vue-responsive-img": "^3.1.2",
     "vuetify": "^1.1.12"
   },
   "devDependencies": {

@@ -20,7 +20,7 @@
     "srcset": "^1.0.0",
     "url-join": "^4.0.0",
     "vue-responsive-img": "^3.0.2",
-    "vuetify": "^1.1.11"
+    "vuetify": "^1.1.12"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -28,7 +28,7 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
-    "media-query-mixins": "^2.0.0",
+    "media-query-mixins": "^2.1.0",
     "node-sass": "^4.9.3",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",

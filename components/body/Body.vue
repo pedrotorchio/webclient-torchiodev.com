@@ -8,14 +8,14 @@ export default {
 }
 </script>
 <template lang="pug">
-  <div id="section-container">
+  <div>
     hero-section#hero
   </div>
 </template>
 
-<style lang="stylus" scoped>
-
-#section-container > section
+<style lang="stylus">
+section
   position: relative;
+  overflow: hidden;
 
 </style>

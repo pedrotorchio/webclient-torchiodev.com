@@ -1,20 +1,23 @@
 <template lang="pug">
   section
     image-element(
-      :image="image"
+      :image='image'
     )
     h1(v-text='title')
 
 </template>
 <style lang="stylus" scoped>
-
+@import '~assets/styles/mixins';
 section
   background-color: #c09ad9;
-  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  height: 100vh;
+  +md()
+    height: 600px;
 
   .img
     position: absolute;
@@ -22,12 +25,16 @@ section
     height: 100%;
     object-fit: cover;
     z-index: 1;
-  
-  h1
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+ h1
     font-weight: 100;
     text-align: right;
     list-style: none;
-    font-size: 48px;
+    
     text-transform: uppercase;
     letter-spacing: 0.5em;
     color: white;

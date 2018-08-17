@@ -1,5 +1,6 @@
 <script>
-import ImageElement from '~/components/utils/ImageElement';
+import { ImageElementWrapper } from 'vue-responsive-img';
+
 export default {
   name: 'Header',
   props: {

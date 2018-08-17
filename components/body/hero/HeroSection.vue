@@ -51,7 +51,7 @@ section
 
 </style>
 <script>
-import ImageElement from '~/components/utils/ImageElement';
+import { ImageElementWrapper as ImageElement } from 'vue-responsive-img';
 
 export default {
   name: 'HeroSection',

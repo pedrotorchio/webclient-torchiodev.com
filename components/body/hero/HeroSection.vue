@@ -37,7 +37,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
 section
-  background-color: #c09ad9;
+  background-color: #f1dbff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ section
 
   height: 100vh;
   +md()
-    height: 600px;
+    height: 400px;
 
   .img
     position: absolute;

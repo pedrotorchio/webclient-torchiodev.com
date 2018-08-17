@@ -1,5 +1,5 @@
 <script>
-import HeroSection from './hero/HeroSection';
+import HeroSection from './Hero';
 
 export default {
   components: {

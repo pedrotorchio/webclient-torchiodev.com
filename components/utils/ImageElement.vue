@@ -11,25 +11,47 @@ export default {
     image: {
       // type: Image,
       required: true
+    },
+    preloadStyle: {
+      type: Object,
+      default: () => ({
+        opacity: 0,
+        transition: '.5s opacity ease-in-out'
+      })
+    },
+    onloadStyle: {
+      type: Object,
+      default: () => ({
+        opacity: 1
+      })
     }
   },
+  data: () => ({
+    loaded: false
+  }),
   computed: {
     sources() {
-      return this.image.srcset.map( src => {
-        const { url, size:[label, size] } = src;
+      if (!this.image)
+        return [];
+      
+      return this.image.srcset.map( ({ url, size:[label, size] }) => ({url , [label]: size}) );
+    },
+    style() {
+      let style = this.preloadStyle;
 
-        return {
-          url,
-          [label]: size
-        }
-      });
+      if (this.loaded)
+        style = { ...style, ...this.onloadStyle };
+
+      return style;
     }
   }
 }
 </script>
 <template lang="pug">
-  responsive-image.img(
-    :sources='sources'
+  responsive-image.img( v-if='image' :sources='sources'
+    v-on='$listeners' 
+    @load='loaded = true'  
+    :style='style'
   )
 </template>
 

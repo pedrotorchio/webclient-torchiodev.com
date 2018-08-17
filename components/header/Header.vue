@@ -1,8 +1,8 @@
 <script>
-import { ImageElementWrapper } from 'vue-responsive-img';
+import { ResponsiveImageWrapper as ImageElement } from 'vue-responsive-img';
 
 export default {
-  name: 'Header',
+  name: 'PageHeader',
   props: {
     logo: {},
     email: {

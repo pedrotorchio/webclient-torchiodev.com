@@ -1,6 +1,6 @@
 <script>
-import HeroSection from './Hero';
-import BioSection from './Bio';
+import HeroSection from '../Hero';
+import BioSection from '../Bio';
 
 export default {
   components: {

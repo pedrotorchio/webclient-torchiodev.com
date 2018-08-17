@@ -23,12 +23,12 @@ export default {
 </script>
 
 <template lang="pug">
-  section.narrow.row.align-center
-    div.avatar.f-1
-      image-element(
-        :image='avatar'
-      )
-    p.column.text.justify-between(v-html='text')
+  section-container(classes='narrow row align-center')
+      div.avatar.f-1
+        image-element(
+          :image='avatar'
+        )
+      p.column.text.justify-between(v-html='text')
 </template>
 
 <style lang="stylus" scoped>

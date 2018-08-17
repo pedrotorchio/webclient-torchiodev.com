@@ -26,7 +26,10 @@ section
   +lg()
     padding: 150px 0;
 
-    &.narrow
-      padding: 150px 320px;
+  &> div
+    width: 100%;
+  +xl()
+    &.narrow > div
+      padding: 150px calc((100vw - 960px)/2);
 
 </style>

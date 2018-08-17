@@ -39,6 +39,6 @@ module.exports = {
       }
     }
   },
-  plugins: ["~/plugins/jsapi-torchiodev.com.js"]
+  plugins: ["~/plugins/jsapi-torchiodev.com.js", "~/plugins/global.js"]
 };
 

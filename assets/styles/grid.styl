@@ -3,18 +3,18 @@
 
 // GRID 
 
-aligns =  ('center' 'center'), 
-          ('flex-start' 'start'), 
-          ('flex-end' 'end'), 
-          ('space-between' 'between'),
-          ('space-around' 'around');
+aligns =  (center 'center'), 
+          (flex-start 'start'), 
+          (flex-end 'end'), 
+          (space-between 'between'),
+          (space-around 'around');
 
 justify()
   for align in aligns
     value = align[0];
     name  = align[1];
 
-    &.{name}
+    &.justify-{name}
       justify-content: value;
 
 align()
@@ -22,7 +22,7 @@ align()
     value = align[0];
     name  = align[1];
 
-    &.{name}
+    &.align-{name}
       align-items: value;
 
 .row, .column

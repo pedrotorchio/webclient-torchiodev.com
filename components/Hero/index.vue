@@ -41,7 +41,7 @@ section
 
   height: 100vh;
   +md()
-    height: auto;
+    height: 350px;
 
   .img
     position: absolute;

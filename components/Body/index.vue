@@ -26,4 +26,7 @@ section
   +lg()
     padding: 150px 0;
 
+    &.narrow
+      padding: 150px 320px;
+
 </style>

@@ -13,14 +13,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "js-models-helper": "^1.0.4",
-    "jsapi-torchiodev.com": "^2.1.5",
+    "jsapi-torchiodev.com": "^3.0.3",
     "nuxt": "^1.4.2",
     "reset-css": "^4.0.1",
     "save-dev": "^2.0.0",
     "srcset": "^1.0.0",
     "url-join": "^4.0.0",
-    "vue-responsive-img": "^4.0.1",
+    "vue-responsive-img": "^4.0.6",
     "vuetify": "^1.1.13"
   },
   "devDependencies": {

@@ -39,7 +39,15 @@ section
     letter-spacing: 0.5em;
     color: white;
     z-index: 2;
+    text-align: center;
+    
+    // width: 15em;
+    font-size: 20px;
 
+    +sm()
+      font-size: 36px;
+    +md()
+      font-size: 48px;
 
 </style>
 <script>

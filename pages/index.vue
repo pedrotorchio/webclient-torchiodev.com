@@ -58,7 +58,7 @@ export default {
     z-index: 1;
 
     +lg()
-      padding-left: side-width;
+      // padding-left: side-width;
     
 
 </style>

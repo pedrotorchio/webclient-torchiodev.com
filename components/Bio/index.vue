@@ -23,12 +23,12 @@ export default {
 </script>
 
 <template lang="pug">
-  section.narrow.row
+  section.narrow.row.align-center
     div.avatar.f-1
       image-element(
         :image='avatar'
       )
-    p.column.text(v-html='text')
+    p.column.text.justify-between(v-html='text')
 </template>
 
 <style lang="stylus" scoped>
@@ -52,10 +52,14 @@ export default {
     top: 0; bottom: 0;
     left: 0; right: 0;
     position: absolute;
+
 p.text
   font-size: 18px;
-  
+  line-height: 2em;
+  padding-left: 20px;
   /deep/ strong
     font-size: 1.2em !important;
+  /deep/ p
+    margin-top: 1em;
 
 </style>

@@ -1,6 +1,7 @@
 module.exports = {
   css: [
     "reset-css",
+    "@/assets/styles/grid.styl",
     "@/assets/fonts/futurist-bold/font.css",
     "@/assets/styles/global.styl"
   ],

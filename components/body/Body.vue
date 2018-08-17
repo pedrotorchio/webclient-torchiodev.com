@@ -17,10 +17,13 @@ export default {
 </template>
 
 <style lang="stylus">
+@import '~assets/styles/mixins';
 
 section
   position: relative;
   overflow: hidden;
 
+  +lg()
+    padding: 150px 0;
 
 </style>

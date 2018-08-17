@@ -1,3 +1,31 @@
+<script>
+import { ResponsiveImageWrapper as ImageElement } from 'vue-responsive-img';
+
+export default {
+  name: 'HeroSection',
+  components: {
+    ImageElement
+  },
+  data: () => ({
+    image: null,
+    title: ''
+  }),
+  methods: {
+    async fetchData() {
+      const info = await this.$api.getAppInfo();
+      return info;
+    }
+  },
+  created() {
+    this.fetchData()
+        .then( info => {
+          this.image = info.main_image
+          this.title = info.title
+        });
+  }
+}
+</script>
+
 <template lang="pug">
   section
     image-element(
@@ -50,30 +78,3 @@ section
       font-size: 48px;
 
 </style>
-<script>
-import { ImageElementWrapper as ImageElement } from 'vue-responsive-img';
-
-export default {
-  name: 'HeroSection',
-  components: {
-    ImageElement
-  },
-  data: () => ({
-    image: null,
-    title: ''
-  }),
-  methods: {
-    async fetchData() {
-      const info = await this.$api.getAppInfo();
-      return info;
-    }
-  },
-  created() {
-    this.fetchData()
-        .then( info => {
-          this.image = info.main_image
-          this.title = info.title
-        });
-  }
-}
-</script>

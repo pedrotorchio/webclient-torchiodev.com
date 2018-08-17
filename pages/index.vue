@@ -1,6 +1,6 @@
 <script>
-import PageHeader from '~/components/header/Header';
-import PageBody from '~/components/body/Body';
+import PageHeader from '~/components/Header';
+import PageBody from '~/components/Body';
 
 export default {
   components: {

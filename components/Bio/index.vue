@@ -3,7 +3,8 @@
 export default {
   
   data: () => ({
-    avatar: null
+    avatar: null,
+    text: ''
   }),
   methods: {
     async fetchData() {
@@ -15,6 +16,7 @@ export default {
     this.fetchData()
         .then( info => {
           this.avatar = info.avatar_image;
+          this.text = info.cover_letter;
         });
   }
 }
@@ -26,6 +28,7 @@ export default {
       image-element(
         :image='avatar'
       )
+    p.column.text(v-html='text')
 </template>
 
 <style lang="stylus" scoped>
@@ -49,5 +52,10 @@ export default {
     top: 0; bottom: 0;
     left: 0; right: 0;
     position: absolute;
+p.text
+  font-size: 18px;
+  
+  /deep/ strong
+    font-size: 1.2em !important;
 
 </style>

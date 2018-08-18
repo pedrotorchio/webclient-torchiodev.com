@@ -45,13 +45,20 @@ export default {
 <style lang="stylus" scoped src="~/assets/styles/pages/index-header.styl"></style>
 <style lang="stylus" scoped src="~/assets/styles/pages/index-body.styl"></style>
 <style lang="stylus" scoped>
+@import '~assets/styles/mixins';
 
+  side-width = 200px;
   #hamburguer
-    z-index: 1;
+    z-index: 2;
   #main-header
     z-index: 3;
+    width: side-width;
   #main-body
     position: relative;
-    z-index: 2;
+    z-index: 1;
+
+    +lg()
+      padding-left: side-width;
+    
 
 </style>

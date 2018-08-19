@@ -40,6 +40,7 @@ module.exports = {
   //     }
   //   }
   // },
-  plugins: ["~/plugins/jsapi-torchiodev.com.js", "~/plugins/global.js"]
+  plugins: ["~/plugins/jsapi-torchiodev.com.js", "~/plugins/global.js"],
+  watch: ["~/components/**/*"]
 };
 

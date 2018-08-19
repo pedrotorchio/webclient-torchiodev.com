@@ -10,27 +10,35 @@ export default {
 }
 </script>
 <template lang="pug">
-  <div>
-    hero-section#hero
-    bio-section#bio
-  </div>
+  section-container
+    hero-section#hero.section
+    bio-section#bio.section
+
 </template>
 
 <style lang="stylus">
 @import '~assets/styles/mixins';
 
-section
+
+.section
   position: relative;
   overflow: hidden;
 
+  &> .content
+    padding: 0 2em;
+
+  &.no-padding
+    padding: 0;
+  
+  +sm()
+    padding: 2em 0;
+  +md()
+    padding: 50px 0;
   +lg()
-    padding: 150px 0;
+    padding: 100px 0;
 
-  &> div
-    width: 100%;
-
-  +xl()
-    &.narrow
-      padding: 150px calc((100vw - 960px)/2);
+    &.narrow > .content
+      max-width: 960px;
+      margin: 0 auto;
 
 </style>

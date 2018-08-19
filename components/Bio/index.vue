@@ -23,8 +23,8 @@ export default {
 </script>
 
 <template lang="pug">
-  section-container(class='narrow' content-class='row align-center')
-      div.avatar.f-1
+  section-container.narrow
+      div.avatar
         image-element(
           :image='avatar'
         )
@@ -32,6 +32,19 @@ export default {
 </template>
 
 <style lang="stylus" scoped>
+@import '~assets/styles/mixins';
+
+#bio /deep/ > .content
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse;
+
+  +lg()
+    align-items: flex-start;
+    flex-direction: row;
+
+  
 
 .avatar
   position: relative;
@@ -39,6 +52,12 @@ export default {
   padding: 20px;
   background: grey;
   overflow: hidden;
+  width: 320px;
+  flex: 0 0 auto;
+  margin-top: 2em;
+
+  +lg()
+    margin-top: 0;
   
   &:before
     content: '';
@@ -54,7 +73,7 @@ export default {
     position: absolute;
 
 p.text
-  font-size: 18px;
+  font-size: 16px;
   line-height: 2em;
   padding-left: 20px;
   /deep/ strong

@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template lang="pug">
-  section
+  section#hero.no-padding
     image-element(
       :image='image'
     )
@@ -32,29 +32,23 @@ export default {
 </template>
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
-section
+
+#hero
+  height: 100vh;
+  position: relative;
+    
   background-color: #f1dbff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
   +md()
     height: 350px;
 
-  .img
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
- h1
+
+
+  h1
     font-weight: 100;
     text-align: right;
     list-style: none;
@@ -72,5 +66,18 @@ section
       font-size: 36px;
     +md()
       font-size: 48px;
+    
+  .img
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+        
+ 
 
 </style>

@@ -35,7 +35,7 @@ export default {
       :logo="logo"
       :email="email"
     )
-    page-body#main-body( @click='showHeader = false'
+    page-body#main-container( @click='showHeader = false'
       :class=`{
         hidden: showHeader
       }`
@@ -53,12 +53,12 @@ export default {
   #main-header
     z-index: 3;
     width: side-width;
-  #main-body
+  #main-container
     position: relative;
     z-index: 1;
 
     +lg()
-      // padding-left: side-width;
-    
+      padding-left: side-width;
+
 
 </style>

@@ -32,7 +32,14 @@ align()
   align();
 
 .row
+  
   flex-direction: row;
+  &.responsive
+    flex-direction: column;
+
+    +md()
+      flex-direction: row;
+    
 
 .column
   flex-direction: column;

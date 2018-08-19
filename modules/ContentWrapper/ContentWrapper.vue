@@ -1,6 +1,6 @@
 <template>
-  <section v-on='containerListeners' v-bind='containerAttrs'>
-    <div v-on='contentListeners' v-bind='contentAttrs'>
+  <section class="container" v-on='containerListeners' v-bind='containerAttrs'>
+    <div class="content" v-on='contentListeners' v-bind='contentAttrs'>
       <slot></slot>
     </div>
   </section>

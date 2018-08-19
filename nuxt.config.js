@@ -1,6 +1,7 @@
 module.exports = {
   css: [
     "reset-css",
+    "@/assets/styles/grid.styl",
     "@/assets/fonts/futurist-bold/font.css",
     "@/assets/styles/global.styl"
   ],
@@ -39,6 +40,6 @@ module.exports = {
       }
     }
   },
-  plugins: ["~/plugins/jsapi-torchiodev.com.js"]
+  plugins: ["~/plugins/jsapi-torchiodev.com.js", "~/plugins/global.js"]
 };
 

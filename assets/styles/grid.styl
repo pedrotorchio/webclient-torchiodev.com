@@ -1,0 +1,49 @@
+@import '~media-query-mixins/_mixins';
+
+
+// GRID 
+
+aligns =  (center 'center'), 
+          (flex-start 'start'), 
+          (flex-end 'end'), 
+          (space-between 'between'),
+          (space-around 'around');
+
+justify()
+  for align in aligns
+    value = align[0];
+    name  = align[1];
+
+    &.justify-{name}
+      justify-content: value;
+
+align()
+  for align in aligns
+    value = align[0];
+    name  = align[1];
+
+    &.align-{name}
+      align-items: value;
+
+.row, .column
+  display: flex;
+  
+  justify();
+  align();
+
+.row
+  flex-direction: row;
+
+.column
+  flex-direction: column;
+
+
+for i in (1..5)
+    .f-{i}
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 100%;
+      +sm()
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: i * 320px;

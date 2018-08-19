@@ -1,5 +1,4 @@
 <script>
-import { ResponsiveImageWrapper as ImageElement } from 'vue-responsive-img';
 
 export default {
   name: 'PageHeader',
@@ -9,9 +8,6 @@ export default {
       type: String,
       required: false
     }
-  },
-  components: {
-    ImageElement
   }
 }
 </script>

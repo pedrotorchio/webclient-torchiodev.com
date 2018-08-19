@@ -1,11 +1,7 @@
 <script>
-import { ResponsiveImageWrapper as ImageElement } from 'vue-responsive-img';
 
 export default {
   name: 'HeroSection',
-  components: {
-    ImageElement
-  },
   data: () => ({
     image: null,
     title: ''
@@ -45,7 +41,7 @@ section
 
   height: 100vh;
   +md()
-    height: 400px;
+    height: 350px;
 
   .img
     position: absolute;

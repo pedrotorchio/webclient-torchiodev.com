@@ -28,8 +28,9 @@ section
 
   &> div
     width: 100%;
+
   +xl()
-    &.narrow > div
+    &.narrow
       padding: 150px calc((100vw - 960px)/2);
 
 </style>

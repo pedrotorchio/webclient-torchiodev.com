@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template lang="pug">
-  section-container(classes='narrow row align-center')
+  section-container(class='narrow' content-class='row align-center')
       div.avatar.f-1
         image-element(
           :image='avatar'

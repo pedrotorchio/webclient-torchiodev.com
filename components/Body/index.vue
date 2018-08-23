@@ -6,13 +6,35 @@ export default {
   components: {
     HeroSection,
     BioSection
-  }  
+  },
+  data: () => ({
+    data: {
+      hero: null,
+      bio: null
+    }
+  }),
+  methods: {
+    setLoaded(key, data) {
+      this.$emit('loaded', key);
+      this.data[key] = data;
+    },
+    async fetchData() {
+      this.$api.getAppInfo()
+          .then((info) => this.setLoaded('hero', { image: info.main_image, title: info.title }));
+      this.$api.getAbout()
+          .then((about) => this.setLoaded('bio', about));
+
+    },
+  },
+  created() {
+    this.fetchData();
+  }
 }
 </script>
 <template lang="pug">
   section-container
-    hero-section#hero.section
-    bio-section#bio.section
+    hero-section#hero.section(v-model='data.hero')
+    bio-section#bio.section(v-model='data.bio')
 
 </template>
 

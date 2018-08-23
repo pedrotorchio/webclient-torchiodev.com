@@ -1,8 +1,10 @@
 <script>
 import PageHeader from '~/components/Header';
 import PageBody from '~/components/Body';
+import Section from '~/components/Section';
 
 export default {
+  extends: Section,
   components: {
     PageHeader,
     PageBody

@@ -3,17 +3,25 @@ import Section from '~/components/Section';
 export default {
   extends: Section,
   name: 'HeroSection',
-  data: () => ({
-    image: null,
-    title: ''
-  }),
-  methods: {
-    dataFetcher() {
-      return this.$api.getAppInfo();
+  props: {
+    value: {
+      type: Object
+    }
+  },
+  computed: {
+    image() {
+      let image = null;
+      if (this.value)
+        image = this.value.image;
+
+      return image;
     },
-    dataHandler(info) {
-      this.image = info.main_image
-      this.title = info.title
+    title() {
+      let title = '';
+      if (this.value)
+        title = this.value.title;
+      
+      return title;
     }
   }
 }

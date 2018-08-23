@@ -1,23 +1,25 @@
 <script>
-
+import Section from '~/components/Section';
 export default {
-  
-  data: () => ({
-    avatar: null,
-    text: ''
-  }),
-  methods: {
-    async fetchData() {
-      const info = await this.$api.getAbout();
-      return info;
+  extends: Section,
+  props: {
+    value: {
+      type: Object
     }
   },
-  created() {
-    this.fetchData()
-        .then( info => {
-          this.avatar = info.avatar_image;
-          this.text = info.cover_letter;
-        });
+  computed: {
+    avatar() {
+      let avatar = null;
+      if (this.value)
+        avatar = this.value.avatar_image;
+      return avatar;
+    },
+    text() {
+      let text = '';
+      if (this.value)
+        text = this.value.cover_letter;
+      return text;
+    }
   }
 }
 </script>

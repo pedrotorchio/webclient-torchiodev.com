@@ -48,7 +48,7 @@ export default {
 @import '~assets/styles/theme.styl';
 
   aside
-    padding: 20px;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

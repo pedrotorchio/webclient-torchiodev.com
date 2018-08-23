@@ -74,13 +74,14 @@ export default {
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
 
-  side-width = 200px;
+  side-width = 250px;
   #hamburguer
     z-index: 2;
   #main-header
     z-index: 3;
-    min-width: side-width;
-    max-width: side-width * 1.5;
+    width: side-width;
+    left: -(side-width);
+    
   #main-container
     position: relative;
     z-index: 1;

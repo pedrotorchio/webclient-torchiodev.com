@@ -15,12 +15,14 @@ export default {
   }),
   methods: {
     setLoaded(key, data) {
-      this.$emit('loaded', key);
       this.data[key] = data;
+      this.$emit('loaded', key);
     },
     async fetchData() {
       this.$api.getAppInfo()
           .then((info) => this.setLoaded('hero', { image: info.main_image, title: info.title }));
+      this.$api.getAbout()
+          .then((about) => this.setLoaded('bio', about));
       this.$api.getAbout()
           .then((about) => this.setLoaded('bio', about));
 
@@ -33,8 +35,8 @@ export default {
 </script>
 <template lang="pug">
   section-container
-    hero-section#hero.section(v-model='data.hero')
-    bio-section#bio.section(v-model='data.bio')
+    hero-section#hero.section(v-model='data.hero' :class="{loaded: data.hero}")
+    bio-section#bio.section(v-model='data.bio' :class="{loaded: data.bio}")
 
 </template>
 

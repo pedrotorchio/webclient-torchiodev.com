@@ -35,6 +35,8 @@ export default {
           li Work
         a(href='#skills' :class='{ loaded: loaded.skills }')
           li Skills
+        a(href='#education' :class='{ loaded: loaded.education }')
+          li Education
         a(href='#more' :class='{ loaded: loaded.more }')
           li More Me
 

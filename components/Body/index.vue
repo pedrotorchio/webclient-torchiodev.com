@@ -10,7 +10,8 @@ export default {
   data: () => ({
     data: {
       hero: null,
-      bio: null
+      bio: null,
+      work: null,
     }
   }),
   methods: {
@@ -23,8 +24,20 @@ export default {
           .then((info) => this.setLoaded('hero', { image: info.main_image, title: info.title }));
       this.$api.getAbout()
           .then((about) => this.setLoaded('bio', about));
-      this.$api.getAbout()
-          .then((about) => this.setLoaded('bio', about));
+      this.$api.getWorks()
+          .then((works) => this.setLoaded('work', works));
+      this.$api.getServices()
+          .then((services) => this.setLoaded('services', services));
+      this.$api.getExperiences()
+          .then((experience) => this.setLoaded('experience', experience));
+      this.$api.getSkills()
+          .then((skills) => this.setLoaded('skills', skills));
+      this.$api.getEducations()
+          .then((education) => this.setLoaded('education', education));
+      this.$api.getLanguages()
+          .then((languages) => this.setLoaded('languages', languages));
+      this.$api.getSocials()
+          .then((social) => this.setLoaded('social', social));
 
     },
   },

@@ -12,12 +12,27 @@ export default {
   data: () => ({
     showHeader: false,
     loaded: {
-      bio: false
+      hero: false,
+      bio: false,
+      work: false,
+      services: false,
+      experience: false,
+      skills: false,
+      education: false,
+      languages: false,
+      social: false,
+      more: false
     }
   }),
   methods: {
     sectionLoaded(key) {
+
       this.loaded[key] = true;
+
+      switch (key) {
+        case 'languages': case 'social':
+          this.loaded['more'] = true;
+      }
     }
   },
   async asyncData({app}) {    
@@ -64,7 +79,8 @@ export default {
     z-index: 2;
   #main-header
     z-index: 3;
-    width: side-width;
+    min-width: side-width;
+    max-width: side-width * 1.5;
   #main-container
     position: relative;
     z-index: 1;

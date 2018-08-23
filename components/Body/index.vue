@@ -1,6 +1,7 @@
 <script>
 import HeroSection from '../Hero';
 import BioSection from '../Bio';
+import WrokSection from '../Work';
 
 export default {
   components: {
@@ -38,7 +39,6 @@ export default {
           .then((languages) => this.setLoaded('languages', languages));
       this.$api.getSocials()
           .then((social) => this.setLoaded('social', social));
-
     },
   },
   created() {
@@ -50,6 +50,7 @@ export default {
   section-container
     hero-section#hero.section(v-model='data.hero' :class="{loaded: data.hero}")
     bio-section#bio.section(v-model='data.bio' :class="{loaded: data.bio}")
+    work-section#bio.section(v-model='data.bio' :class="{loaded: data.bio}")
 
 </template>
 

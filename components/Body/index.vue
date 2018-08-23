@@ -1,12 +1,13 @@
 <script>
 import HeroSection from '../Hero';
 import BioSection from '../Bio';
-import WrokSection from '../Work';
+import WorkSection from '../Work';
 
 export default {
   components: {
     HeroSection,
-    BioSection
+    BioSection,
+    WorkSection
   },
   data: () => ({
     data: {
@@ -61,7 +62,8 @@ export default {
 .section
   position: relative;
   overflow: hidden;
-
+  min-height: 600px;
+  
   &> .content
     padding: 0 2em;
 

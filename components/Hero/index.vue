@@ -48,7 +48,7 @@ export default {
   align-items: center;
   justify-content: center;
 
-  +md()
+  +lg()
     height: 350px;
 
 

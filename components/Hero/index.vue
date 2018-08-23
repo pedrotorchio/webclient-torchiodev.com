@@ -1,23 +1,20 @@
 <script>
-
+import Section from '~/components/Section';
 export default {
+  extends: Section,
   name: 'HeroSection',
   data: () => ({
     image: null,
     title: ''
   }),
   methods: {
-    async fetchData() {
-      const info = await this.$api.getAppInfo();
-      return info;
+    dataFetcher() {
+      return this.$api.getAppInfo();
+    },
+    dataHandler(info) {
+      this.image = info.main_image
+      this.title = info.title
     }
-  },
-  created() {
-    this.fetchData()
-        .then( info => {
-          this.image = info.main_image
-          this.title = info.title
-        });
   }
 }
 </script>

@@ -1,17 +1,30 @@
-<template lang="pug">
-  section
-    div(:class='classes')
-      slot
-</template>
-
 <script>
 export default {
-  name: "SectionContainer",
+  name: "SectionParent",
   props: {
-    classes: {
-      type: String,
-      default: ''
+    loaded: {
+      type: Boolean,
+      required: false
     }
+  },
+  methods: {
+    dataFetcher() { // overload
+      return /* Promise */ null;
+    },
+    dataHandler(data) { //overload
+
+    },
+    async fetchData() {
+      const info = await this.dataFetcher();
+      return info;
+    }
+  },
+  created() {
+    this.fetchData()
+        .then( info => {
+          this.$emit('update:loaded', true);
+          this.dataHandler(info);
+        });
   }
 }
 </script>

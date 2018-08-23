@@ -7,6 +7,10 @@ export default {
     email: {
       type: String,
       required: false
+    },
+    loaded: {
+      type: Object,
+      default: () => ({})
     }
   }
 }
@@ -25,13 +29,13 @@ export default {
 
     nav
       ul
-        a(href='#me')
+        a(href='#me' :class='{ loaded: loaded.bio }')
           li Me
-        a(href='#work')
+        a(href='#work' :class='{ loaded: loaded.work }')
           li Work
-        a(href='#skills')
+        a(href='#skills' :class='{ loaded: loaded.skills }')
           li Skills
-        a(href='#more')
+        a(href='#more' :class='{ loaded: loaded.more }')
           li More Me
 
     h4(v-text='email')
@@ -69,15 +73,16 @@ export default {
           font-weight: 100;
 
           transition-property: color, font-weight;
-          transition-duration: .3s;
 
           &.loaded
             color: inherit;
             font-weight: bold;
+            transition-duration: 1s;
 
             &:hover
               color: highlight;
-          
+              transition-duration: .3s;
+
 
         li
           font-weight: 100;

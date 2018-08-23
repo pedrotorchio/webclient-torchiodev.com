@@ -10,8 +10,16 @@ export default {
     PageBody
   },
   data: () => ({
-    showHeader: false
+    showHeader: false,
+    loaded: {
+      bio: false
+    }
   }),
+  methods: {
+    sectionLoaded(key) {
+      this.loaded[key] = true;
+    }
+  },
   async asyncData({app}) {    
     const info = await app.$api.getAppInfo();
 
@@ -36,8 +44,10 @@ export default {
       }`
       :logo="logo"
       :email="email"
+      :loaded="loaded"
     )
     page-body#main-container( @click='showHeader = false'
+      @loaded='sectionLoaded'
       :class=`{
         hidden: showHeader
       }`

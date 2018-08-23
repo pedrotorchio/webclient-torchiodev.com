@@ -22,7 +22,9 @@ export default {
   created() {
     this.fetchData()
         .then( info => {
+          this.$emit('loaded', true);
           this.$emit('update:loaded', true);
+
           this.dataHandler(info);
         });
   }

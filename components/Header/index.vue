@@ -90,7 +90,7 @@ export default {
           font-weight: 100;
           text-align: right;
           list-style: none;
-          font-size: 18px;
+          font-size: 14px;
           text-transform: uppercase;
           letter-spacing: .5em;
           

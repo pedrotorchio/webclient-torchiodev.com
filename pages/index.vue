@@ -35,7 +35,7 @@ export default {
       :logo="logo"
       :email="email"
     )
-    page-body#main-container( @click='showHeader = false'
+    page-Body#main-container( @click='showHeader = false'
       :class=`{
         hidden: showHeader
       }`
@@ -43,7 +43,7 @@ export default {
 </template>
 
 <style lang="stylus" scoped src="~/assets/styles/pages/index-header.styl"></style>
-<style lang="stylus" scoped src="~/assets/styles/pages/index-body.styl"></style>
+<style lang="stylus" scoped src="~/assets/styles/pages/index-Body.styl"></style>
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
 

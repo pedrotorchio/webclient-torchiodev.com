@@ -25,16 +25,21 @@ export default {
 
     nav
       ul
-        li Me
-        li Work
-        li Skills
-        li More Me
+        a(href='#me')
+          li Me
+        a(href='#work')
+          li Work
+        a(href='#skills')
+          li Skills
+        a(href='#more')
+          li More Me
 
     h4(v-text='email')
 </template>
 
 <style lang="stylus" scoped> 
 @import '~assets/styles/mixins.styl';
+@import '~assets/styles/theme.styl';
 
   aside
     padding: 20px;
@@ -58,6 +63,22 @@ export default {
         flex-direction: column;
         justify-content: space-around;
         line-height: 64px;
+        a
+          text-decoration: none;
+          color: lightgrey;
+          font-weight: 100;
+
+          transition-property: color, font-weight;
+          transition-duration: .3s;
+
+          &.loaded
+            color: inherit;
+            font-weight: bold;
+
+            &:hover
+              color: highlight;
+          
+
         li
           font-weight: 100;
           text-align: right;
@@ -65,8 +86,7 @@ export default {
           font-size: 18px;
           text-transform: uppercase;
           letter-spacing: .5em;
-          &.loaded
-            font-weight: bold;
+          
     h4
       text-align: center;
       font-weight: 100;

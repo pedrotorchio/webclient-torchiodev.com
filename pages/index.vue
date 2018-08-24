@@ -61,7 +61,8 @@ export default {
       :email="email"
       :loaded="loaded"
     )
-    page-body#main-container( @click='showHeader = false'
+    page-body#main-container( 
+      @click='showHeader = false'
       @loaded='sectionLoaded'
       :class=`{
         hidden: showHeader
@@ -85,6 +86,7 @@ export default {
   #main-container
     position: relative;
     z-index: 1;
+    transition: padding-left 1s;
 
     +lg()
       padding-left: side-width;

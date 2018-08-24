@@ -35,7 +35,7 @@ export default {
       }
     }
   },
-  async asyncData({app}) {    
+  async asyncData({ app }) {    
     const info = await app.$api.getAppInfo();
 
     return {

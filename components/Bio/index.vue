@@ -49,7 +49,6 @@ avatar-size = 320px;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column-reverse;
-  
 
   +lg()
     align-items: flex-start;
@@ -61,7 +60,7 @@ avatar-size = 320px;
   position: relative;
   border-radius: 50%;
   padding: 20px;
-  background: grey;
+  background: lightgrey;
   overflow: hidden;
   width: avatar-size;
   flex: 0 0 auto;

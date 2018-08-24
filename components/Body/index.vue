@@ -51,7 +51,7 @@ export default {
   section-container
     hero-section#hero.section(v-model='data.hero' :class="{loaded: data.hero}")
     bio-section#bio.section(v-model='data.bio' :class="{loaded: data.bio}")
-    work-section#bio.section(v-model='data.bio' :class="{loaded: data.bio}")
+    work-section#work.section(v-model='data.work' :class="{loaded: data.work}")
 
 </template>
 
@@ -62,7 +62,6 @@ export default {
 .section
   position: relative;
   overflow: hidden;
-  min-height: 600px;
   
   &> .content
     padding: 0 2em;

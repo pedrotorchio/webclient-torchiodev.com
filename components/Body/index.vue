@@ -66,6 +66,7 @@ export default {
   
   &> .content
     padding: 0 2em;
+    margin: 0 auto;
 
   &.no-padding
     padding: 0;
@@ -79,6 +80,5 @@ export default {
 
     &.narrow > .content
       max-width: 960px;
-      margin: 0 auto;
 
 </style>

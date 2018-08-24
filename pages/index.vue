@@ -74,14 +74,14 @@ export default {
 <style lang="stylus" scoped src="~/assets/styles/pages/index-body.styl"></style>
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
+@import '~assets/styles/theme';
 
-  side-width = 200px;
   #hamburguer
     z-index: 2;
   #main-header
     z-index: 3;
-    width: side-width;
-    left: -(side-width);
+    width: header--width;
+    left: -(header--width);
     
   #main-container
     position: relative;
@@ -89,7 +89,7 @@ export default {
     transition: padding-left 1s;
 
     +lg()
-      padding-left: side-width;
+      padding-left: header--width;
 
 
 </style>

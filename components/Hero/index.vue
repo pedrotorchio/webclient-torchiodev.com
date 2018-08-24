@@ -1,33 +1,34 @@
 <script>
-import { ResponsiveImageWrapper as ImageElement } from 'vue-responsive-img';
-
+import Section from '~/components/Section';
 export default {
+  extends: Section,
   name: 'HeroSection',
-  components: {
-    ImageElement
-  },
-  data: () => ({
-    image: null,
-    title: ''
-  }),
-  methods: {
-    async fetchData() {
-      const info = await this.$api.getAppInfo();
-      return info;
+  props: {
+    value: {
+      type: Object
     }
   },
-  created() {
-    this.fetchData()
-        .then( info => {
-          this.image = info.main_image
-          this.title = info.title
-        });
+  computed: {
+    image() {
+      let image = null;
+      if (this.value)
+        image = this.value.image;
+
+      return image;
+    },
+    title() {
+      let title = '';
+      if (this.value)
+        title = this.value.title;
+      
+      return title;
+    }
   }
 }
 </script>
 
 <template lang="pug">
-  section
+  section#hero.no-padding
     image-element(
       :image='image'
     )
@@ -36,29 +37,23 @@ export default {
 </template>
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
-section
+
+#hero
+  height: 100vh;
+  position: relative;
+    
   background-color: #f1dbff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  height: 100vh;
-  +md()
-    height: 400px;
+  +lg()
+    height: 350px;
 
-  .img
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    
- h1
+
+
+  h1
     font-weight: 100;
     text-align: right;
     list-style: none;
@@ -76,5 +71,18 @@ section
       font-size: 36px;
     +md()
       font-size: 48px;
+    
+  .img
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+        
+ 
 
 </style>

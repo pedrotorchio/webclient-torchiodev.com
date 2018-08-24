@@ -15,6 +15,7 @@ export default {
 @import '~assets/styles/theme';
 .section
   background-color: color_red;
-
+  min-height: 300px;
+  max-height: 300px;
 
 </style>

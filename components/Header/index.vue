@@ -82,7 +82,7 @@ export default {
             transition-duration: 1s;
 
             &:hover
-              color: color_highlight;
+              color: highlight--color;
               transition-duration: .3s;
 
 

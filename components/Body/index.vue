@@ -62,6 +62,7 @@ export default {
 .section
   position: relative;
   overflow: hidden;
+  transition: max-height 1s;
   
   &> .content
     padding: 0 2em;

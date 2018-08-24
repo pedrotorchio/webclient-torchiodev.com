@@ -1,16 +1,41 @@
 <script>
 import PageHeader from '~/components/Header';
 import PageBody from '~/components/Body';
+import Section from '~/components/Section';
 
 export default {
+  extends: Section,
   components: {
     PageHeader,
     PageBody
   },
   data: () => ({
-    showHeader: false
+    showHeader: false,
+    loaded: {
+      hero: false,
+      bio: false,
+      work: false,
+      services: false,
+      experience: false,
+      skills: false,
+      education: false,
+      languages: false,
+      social: false,
+      more: false
+    }
   }),
-  async asyncData({app}) {    
+  methods: {
+    sectionLoaded(key) {
+
+      this.loaded[key] = true;
+
+      switch (key) {
+        case 'languages': case 'social':
+          this.loaded['more'] = true;
+      }
+    }
+  },
+  async asyncData({ app }) {    
     const info = await app.$api.getAppInfo();
 
     return {
@@ -34,8 +59,11 @@ export default {
       }`
       :logo="logo"
       :email="email"
+      :loaded="loaded"
     )
-    page-body#main-body( @click='showHeader = false'
+    page-body#main-container( 
+      @click='showHeader = false'
+      @loaded='sectionLoaded'
       :class=`{
         hidden: showHeader
       }`
@@ -46,19 +74,22 @@ export default {
 <style lang="stylus" scoped src="~/assets/styles/pages/index-body.styl"></style>
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
+@import '~assets/styles/theme';
 
-  side-width = 200px;
   #hamburguer
     z-index: 2;
   #main-header
     z-index: 3;
-    width: side-width;
-  #main-body
+    width: header--width;
+    left: -(header--width);
+    
+  #main-container
     position: relative;
     z-index: 1;
+    transition: padding-left 1s;
 
     +lg()
-      // padding-left: side-width;
-    
+      padding-left: header--width;
+
 
 </style>

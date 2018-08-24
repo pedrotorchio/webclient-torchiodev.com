@@ -1,17 +1,5 @@
-<template lang="pug">
-  section
-    div(:class='classes')
-      slot
-</template>
-
 <script>
 export default {
-  name: "SectionContainer",
-  props: {
-    classes: {
-      type: String,
-      default: ''
-    }
-  }
+  name: "SectionParent"
 }
 </script>

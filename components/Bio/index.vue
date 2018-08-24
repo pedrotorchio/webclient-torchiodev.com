@@ -1,30 +1,32 @@
 <script>
-
+import Section from '~/components/Section';
 export default {
-  
-  data: () => ({
-    avatar: null,
-    text: ''
-  }),
-  methods: {
-    async fetchData() {
-      const info = await this.$api.getAbout();
-      return info;
+  extends: Section,
+  props: {
+    value: {
+      type: Object
     }
   },
-  created() {
-    this.fetchData()
-        .then( info => {
-          this.avatar = info.avatar_image;
-          this.text = info.cover_letter;
-        });
+  computed: {
+    avatar() {
+      let avatar = null;
+      if (this.value)
+        avatar = this.value.avatar_image;
+      return avatar;
+    },
+    text() {
+      let text = '';
+      if (this.value)
+        text = this.value.cover_letter;
+      return text;
+    }
   }
 }
 </script>
 
 <template lang="pug">
-  section-container(classes='narrow row align-center')
-      div.avatar.f-1
+  section-container.narrow
+      div.avatar
         image-element(
           :image='avatar'
         )
@@ -32,13 +34,40 @@ export default {
 </template>
 
 <style lang="stylus" scoped>
+@import '~assets/styles/mixins';
+@import '~assets/styles/theme';
+
+avatar-size = 320px;
+
+.section
+  max-height: avatar-size + 2*section_lg--padding;
+
+  &.loaded
+    max-height: 1400px;
+.section /deep/ > .content
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse;
+
+  +lg()
+    align-items: flex-start;
+    flex-direction: row;
+
+  
 
 .avatar
   position: relative;
   border-radius: 50%;
   padding: 20px;
-  background: grey;
+  background: lightgrey;
   overflow: hidden;
+  width: avatar-size;
+  flex: 0 0 auto;
+  margin-top: 2em;
+
+  +lg()
+    margin-top: 0;
   
   &:before
     content: '';
@@ -54,7 +83,7 @@ export default {
     position: absolute;
 
 p.text
-  font-size: 18px;
+  font-size: 16px;
   line-height: 2em;
   padding-left: 20px;
   /deep/ strong

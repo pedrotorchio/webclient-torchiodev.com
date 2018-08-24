@@ -7,6 +7,10 @@ export default {
     email: {
       type: String,
       required: false
+    },
+    loaded: {
+      type: Object,
+      default: () => ({})
     }
   }
 }
@@ -25,19 +29,26 @@ export default {
 
     nav
       ul
-        li Me
-        li Work
-        li Skills
-        li More Me
+        a(href='#me' :class='{ loaded: loaded.bio }')
+          li Me
+        a(href='#work' :class='{ loaded: loaded.work }')
+          li Work
+        a(href='#skills' :class='{ loaded: loaded.skills }')
+          li Skills
+        a(href='#education' :class='{ loaded: loaded.education }')
+          li Education
+        a(href='#more' :class='{ loaded: loaded.more }')
+          li More Me
 
     h4(v-text='email')
 </template>
 
 <style lang="stylus" scoped> 
 @import '~assets/styles/mixins.styl';
+@import '~assets/styles/theme.styl';
 
   aside
-    padding: 20px;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,15 +69,31 @@ export default {
         flex-direction: column;
         justify-content: space-around;
         line-height: 64px;
+        a
+          text-decoration: none;
+          color: lightgrey;
+          font-weight: 100;
+
+          transition-property: color, font-weight;
+
+          &.loaded
+            color: inherit;
+            font-weight: bold;
+            transition-duration: 1s;
+
+            &:hover
+              color: highlight--color;
+              transition-duration: .3s;
+
+
         li
           font-weight: 100;
           text-align: right;
           list-style: none;
-          font-size: 18px;
+          font-size: 14px;
           text-transform: uppercase;
           letter-spacing: .5em;
-          &.loaded
-            font-weight: bold;
+          
     h4
       text-align: center;
       font-weight: 100;

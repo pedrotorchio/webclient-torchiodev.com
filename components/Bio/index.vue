@@ -35,12 +35,21 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~assets/styles/mixins';
+@import '~assets/styles/theme';
 
+avatar-size = 320px;
+
+#bio
+  max-height: avatar-size + 2*section_lg--padding;
+
+  &.loaded
+    max-height: 1400px;
 #bio /deep/ > .content
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column-reverse;
+  
 
   +lg()
     align-items: flex-start;
@@ -54,7 +63,7 @@ export default {
   padding: 20px;
   background: grey;
   overflow: hidden;
-  width: 320px;
+  width: avatar-size;
   flex: 0 0 auto;
   margin-top: 2em;
 

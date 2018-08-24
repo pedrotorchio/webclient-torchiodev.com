@@ -39,12 +39,12 @@ export default {
 
 avatar-size = 320px;
 
-#bio
+.section
   max-height: avatar-size + 2*section_lg--padding;
 
   &.loaded
     max-height: 1400px;
-#bio /deep/ > .content
+.section /deep/ > .content
   display: flex;
   justify-content: flex-start;
   align-items: center;

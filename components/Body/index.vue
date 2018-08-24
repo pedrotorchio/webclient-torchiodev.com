@@ -57,6 +57,7 @@ export default {
 
 <style lang="stylus">
 @import '~assets/styles/mixins';
+@import '~assets/styles/theme';
 
 
 .section
@@ -65,8 +66,12 @@ export default {
   transition: max-height 1s;
   
   &> .content
+    box-sizing: content-box;
     padding: 0 2em;
     margin: 0 auto;
+
+    & > *
+      box-sizing: border-box;
 
   &.no-padding
     padding: 0;
@@ -78,7 +83,10 @@ export default {
   +lg()
     padding: 100px 0;
 
+    & > .content
+      max-width: wide--max-width;
+
     &.narrow > .content
-      max-width: 960px;
+      max-width: narrow--max-width;
 
 </style>
